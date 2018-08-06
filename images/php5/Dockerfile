@@ -27,7 +27,8 @@ RUN chmod +x /usr/local/bin/composer
 
 # 配置
 RUN echo "memory_limit=-1" >> /usr/local/etc/php/conf.d/php.ini
-
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 
 
